@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表单标签</title>
+</head>
+<body>
+    <!-- 
+        input       输入表单元素
+            label   绑定一个表单元素
+            file
+            button
+            radio
+            submit
+            reset
+            value   默认显示
+            name    用于区别表单元素
+            checked 默认选中状态
+            type    让input表单元展示不同形态
+        select      下拉表单元素 （option）
+        textarea    文本域元素
+     -->
+    <form action="dome.php" method="get" name="name1">
+        用户名:<input type="text" name="username" value="请输入用户名" maxlength="6"><br>
+
+        密码:<input type="password" name="passwrd"><br>
+
+        性别:男<input type="radio" name="sex" value="男" checked="checked">女<input type="radio" name="sex"value="女">人妖<input type="radio" name="sex" value="人妖"><br>
+
+        爱好:吃饭<input type="checkbox"> 睡觉<input type="checkbox"> 打豆豆<input type="checkbox"><br>
+
+        <input type="submit" value="免费注册">
+        <input type="reset" value="重新设置">
+        <input type="button" value="获取验证码"><br>
+
+        上传头像:<input type="file">    <!-- 文件域 -->
+
+        <input type="radio" name="sex1" id="nan"><label for="nan">男</label>
+        <input type="radio" name="sex1" id="nv"><label for="nv">女</label><br>
+
+        籍贯:
+        <select>
+            <option>北京</option>
+            <option>上海</option>
+            <option>江西</option>
+            <option selected="selected">火星</option>
+        </select><br>
+    
+        今日反馈:
+        <textarea cols="50" rows="5">今天被迫学习，emmmmmmmmmmmmmmmmmm
+        </textarea>
+        
+    </form>
+</body>
+</html>
