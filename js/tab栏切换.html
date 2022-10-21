@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div1 {
+            margin: 100px auto;
+            width: 500px;
+            height: 350px;
+        }
+
+        .div2 ul {
+            width: 500px;
+            height: 50px;
+            margin: 0 auto;
+            list-style: none;
+        }
+
+        .div2 li {
+            width: 100px;
+            tab-size: 14px;
+            text-align: center;
+            float: left;
+            margin: auto auto;
+            border: 3px solid #000000;
+        }
+
+        .bg {
+            background-color: pink;
+        }
+
+        #div3 div {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div1">
+        <div class="div2">
+            <ul id="mul">
+                <li style="background-color: red;">图片1</li>
+                <li>图片2</li>
+                <li>图片3</li>
+                <li>图片4</li>
+            </ul>
+        </div>
+        <div id="div3">
+            <div style="display: block;">
+                <img src="tp1.jpg" alt=""><br>
+                这是图片1
+            </div>
+            <div>
+                <img src="tp2.jpg" alt=""><br>
+                这是图片2
+            </div>
+            <div>
+                <img src="tp3.jpg" alt=""><br>
+                这是图片3
+            </div>
+            <div>
+                <img src="tp4.jpg" alt=""><br>
+                这是图片4
+            </div>
+        </div>
+    </div>
+    <script>
+        var mli = document.getElementById('mul').querySelectorAll('li');
+        var imgs = document.getElementById('div3').querySelectorAll('div');
+        for (var i = 0; i < mli.length; i++) {
+            mli[i].onmouseover = function () {
+                this.className = 'bg';
+            }
+            mli[i].onmouseout = function () {
+                this.className = '';
+            }
+
+            mli[i].setAttribute('index', i);
+            mli[i].onclick = function () {
+                for (var i = 0; i < mli.length; i++) {
+                    mli[i].style.backgroundColor = '';
+                }
+                this.style.backgroundColor = 'red';
+                var index = this.getAttribute('index');
+                for (var i = 0; i < imgs.length; i++) {
+                    imgs[i].style.display = 'none';
+                }
+                imgs[index].style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>

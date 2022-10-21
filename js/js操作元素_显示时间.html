@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+</style>
+
+<body>
+    <div id="timebox">
+        当前时间:
+        <span id="year"></span>年
+        <span id="month"></span>月
+        <span id="date"></span>日
+        <span id="day"></span>/
+        <span id="hours"></span>:
+        <span id="minutes"></span>:
+        <span id="seconds"></span>
+    </div>
+    <script>
+        var tbn = document.getElementById('timebt');
+        function show() {
+            var date = new Date();
+            var year = date.getFullYear();
+            var month = date.getMonth();
+            var dates = date.getDate();
+            var day = date.getDay();
+            var hours = date.getHours();
+            var minutes = date.getMinutes();
+            var seconds = date.getSeconds();
+            var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六'];
+
+            document.getElementById('year').innerHTML = year;
+            document.getElementById('month').innerHTML = month + 1;
+            document.getElementById('date').innerHTML = dates;
+            document.getElementById('day').innerHTML = arr[day];
+            document.getElementById('hours').innerHTML = hours;
+            document.getElementById('minutes').innerHTML = minutes;
+            document.getElementById('seconds').innerHTML = seconds;
+
+            setTimeout(show, 1000);//定时器
+            return '';
+        }
+        show();//调用函数
+
+    </script>
+
+    <div class="imgchange">
+        <button id="ldh">
+            刘德华
+        </button>
+        <button id="zxy">
+            张学友
+        </button><br>
+        <img id="star" src="ldh.jpg" alt="" title="刘德华">
+    </div>
+    <script>
+        var ldh = document.getElementById('ldh');
+        var zxy = document.getElementById('zxy');
+        var img = document.getElementById('star');
+
+        ldh.onclick = function () {
+            img.src = 'ldh.jpg'
+            img.title = '刘德华'
+        }
+        zxy.onclick = function () {
+            img.src = 'zxy.jpg'
+            img.title = '张学友'
+
+        }
+    </script>
+
+    <div>
+        <img id="helloimg" src="swh.gif" alt="" title="上午好" width="300px"><br>
+        <span id="hello"></span>
+    </div>
+    <script>
+        var img1 = document.getElementById('helloimg');
+        var hello = document.getElementById('hello');
+        var date = new Date();
+        var hours = date.getHours();
+
+        if (hours < 12) {
+            img1.src = 'swh.gif';
+            img1.title = '上午好';
+            hello.innerHTML = '上午好，好好写代码';
+        } else if (hours < 18) {
+            img1.src = 'xwh.gif';
+            img1.title = '下午好';
+            hello.innerHTML = '下午好，好好写代码';
+        } else {
+            img1.src = 'wsh.gif';
+            img1.title = '晚上好';
+            hello.innerHTML = '晚上好，好好睡觉';
+        }
+    </script>
+</body>
+
+</html>
