@@ -111,17 +111,16 @@ a {
 .mynav a {
     color: #fff;
     border-style: none;
+    font-size: 16px;
 }
 
 .mynav .innav {
     margin: 0 auto;
     width: 76%;
     height: 50px;
-
 }
 
 .innav ul li {
-    height: 50px;
     display: block;
     float: left;
     text-align: center;
@@ -135,12 +134,26 @@ a {
 }
 
 #nav {
+    width: 100%;
     background: rgba(0, 0, 0, 0.4);
     position: absolute;
     left: 0px;
-    display: none;
+    height: 0px;
+    overflow: hidden;
+    transition: height 1s;
+}
+
+#nav a {
+    display: block;
+    font-size: 14px;
+    transition: all 0.3;
+}
+
+#nav a:hover {
+    background: #0c7124;
+    transition: all 0.2s ease-in;
 }
 
 .innav_ul li:hover #nav {
-    display: block;
+    height: 900%;
 }
