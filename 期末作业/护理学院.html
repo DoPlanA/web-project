@@ -47,82 +47,83 @@
                 <ul class="innav_ul">
                     <li>
                         <a href="">首页</a>
-                        <div id="nav">
-                            <a href="#">学院简介</a>
-                            <a href="#">现任领导</a>
-                            <a href="#">机构设置</a>
-                        </div>
+
                     </li>
                     <li>
                         <a href="">学院概况</a>
+                        <ul id="nav1">
+                            <li><a href="#">学院简介</a></li>
+                            <li><a href="#">现任领导</a></li>
+                            <li><a href="#">机构设置</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="">党建工作</a>
                     </li>
                     <li>
                         <a href="">学科建设</a>
-                        <ul id="nav">
-                            <a href="#">专业设置</a>
-                            <a href="#">对外交流</a>
+                        <ul id="nav2">
+                            <li><a href="#">专业设置</a></li>
+                            <li><a href="#">对外交流</a></li>
                         </ul>
                     </li>
                     <li>
                         <a href="">教学科研</a>
-                        <div id="nav">
-                            <a href="#">教研动态</a>
-                            <a href="#">精品课程</a>
-                        </div>
+                        <ul id="nav3">
+                            <li><a href="#">教研动态</a></li>
+                            <li><a href="#">精品课程</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="">省级实验教学示范中心</a>
-                        <div id="nav">
-                            <a href="#">护理学院实验中心简介</a>
-                            <a href="#">交流互动</a>
-                            <a href="#">教师队伍</a>
-                            <a href="#">仪器设备</a>
-                            <a href="#">规章制度</a>
-                            <a href="#">网络资源</a>
-                            <a href="#">实验室开放</a>
-                            <a href="#">教学研究</a>
-                            <a href="#">实践教学</a>
-                        </div>
+                        <ul id="nav4">
+                            <li> <a href="#">护理学院实验中心简介</a></li>
+                            <li> <a href="#">交流互动</a> </li>
+                            <li> <a href="#">教师队伍</a> </li>
+                            <li> <a href="#">仪器设备</a> </li>
+                            <li> <a href="#">规章制度</a> </li>
+                            <li> <a href="#">网络资源</a> </li>
+                            <li> <a href="#">实验室开放</a> </li>
+                            <li> <a href="#">教学研究</a> </li>
+                            <li> <a href="#">实践教学</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="">学生工作</a>
-                        <div id="nav">
-                            <a href="#">管理制度</a>
-                            <a href="#">学工动态</a>
-                            <a href="#">团学风采</a>
-                            <a href="#">就业信息</a>
-                        </div>
+                        <ul id="nav5">
+                            <li><a href="#">管理制度</a></li>
+                            <li><a href="#">学工动态</a></li>
+                            <li><a href="#">团学风采</a></li>
+                            <li><a href="#">就业信息</a></li>
+                        </ul>
                     </li>
                     <li>
                         <a href="">下载中心</a>
-                        <div id="nav">
-                            <a href="#">政策文件</a>
-                            <a href="#">教师下载中心</a>
-                            <a href="#">学生常用表格下载</a>
-                        </div>
+                        <ul id="nav6">
+                            <li><a href="#">政策文件</a></li>
+                            <li><a href="#">教师下载中心</a></li>
+                            <li><a href="#">学生常用表格下载</a></li>
+                        </ul>
                         </il>
                 </ul>
             </div>
         </div>
     </nav>
     <banner>
-        <div class="imgbox">
-            <ul>
-                <li>
-                    <a href="#"><img src="./image/main/20220311105739.jpg" alt=""></a>
+        <div class="banner_box">
+            <ul id="myimgs">
+                <li id="bannerimg1">
+                    <a href="#"><img src="./image/main/20220311105739.jpg"></a>
                 </li>
-                <li>
-                    <a href="#"><img src="./image/main/2022031114180803.jpg" alt=""></a>
+                <li id="bannerimg2">
+                    <a href="#"><img src="./image/main/2022031114180803.jpg"></a>
                 </li>
-                <li>
-                    <a href="#"><img src="./image/main/xsbisai.jpg" alt=""></a>
+                <li id="bannerimg3">
+                    <a href="#"><img src="./image/main/xsbisai.jpg"></a>
                 </li>
             </ul>
-            <span class="leftbutton" onclick="left()"></span>
-            <span class="rightbutton" onclick="right()"></span>
+            <a class="leftbutton"></a>
+            <a class="rightbutton"></a>
         </div>
     </banner>
     <main>
@@ -130,20 +131,26 @@
             <div class="first_box">
                 <div class="article_one">
                     <div class="schoolnew">
-                        <h1>
-                            <span>学院新闻</span>
-                            <a href="#">更多 <font>>></font></a>
-                        </h1>
+                        <ul class="new_title">
+                            <li>
+                                学院新闻
+                            </li>
+                        </ul>
                         <div class="new_left">
+                            <a href="#">更多 <font>>></font></a>
                             <ul>
                                 <li>
-                                    <img src="./image/aside/article.jpg" alt="">
-                                    <p>九江学院护理教育创办120周年暨护理之光论坛隆重举行
-                                    </p>
+                                    <a href="#">
+                                        <img src="./image/aside/article.jpg" width="237px" height="145px">
+                                        <p>九江学院护理教育创办120周年...
+                                        </p>
+                                    </a>
                                 </li>
                                 <li>
-                                    <img src="./image/aside/article2.jpg" alt="">
-                                    <p>5.12国际护士节丨践行天使仁爱，红细胞在行动</p>
+                                    <a href="#">
+                                        <img src="./image/aside/article2.jpg" width="237px" height="145px">
+                                        <p>5.12国际护士节丨践行天使仁...</p>
+                                    </a>
                                 </li>
                             </ul>
                         </div>
@@ -166,10 +173,10 @@
                 </div>
                 <div class="article_two">
                     <div class="notice">
-                        <h1>
-                            <span>通知公告</span>
-                            <a href="#">更多 <font>>></font></a>
-                        </h1>
+                        <ul class="notice_title">
+                            <li>通知公告</li>
+                        </ul>
+                        <a class="more" href="#">更多 <font>>></font></a>
                         <ul>
                             <li>
                                 <div>
@@ -199,12 +206,12 @@
                     </div>
                 </div>
             </div>
-            <span>
+            <!-- <span>
                 <div class="split">
                     <img src="./image/util/dsas.png">
                 </div>
-            </span>
-            <div class="second_box">
+            </span> -->
+            <!-- <div class="second_box">
                 <div class="article_three">
                     <h1>
                         <span>学生动态</span>
@@ -242,8 +249,8 @@
                     <a href="#"><img src="./image/aside/qw3.png"></a>
                     <a href="#"><img src="./image/aside/qw4.png"></a>
                 </div>
-            </div>
-            <div class="third_box">
+            </div> -->
+            <!-- <div class="third_box">
                 <div class="aside">
                     <h1>
                         <span>友情链接</span>
@@ -256,15 +263,15 @@
                         <a href="#"><img src="./image/footer/rr.png"></a>
                     </div>
                 </div>
-            </div>
+            </div> -->
         </div>
     </main>
-    <footer>
+    <!-- <footer>
         <div class="myfooter">
             <p>Copyright© 2019 All Rights Reserved.护理学院</p>
             <p>学院地址：江西省九江市浔阳东路320号 &nbsp; &nbsp;&nbsp; &nbsp; Email：hlxy@jju.edu.cn</p>
         </div>
-    </footer>
+    </footer> -->
 </body>
 
 </html>
