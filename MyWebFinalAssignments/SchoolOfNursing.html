@@ -35,15 +35,18 @@
                         <span>
                             <input type="image" src="./image/header/search.png" align="absmiddle" style="cursor: hand">
                         </span>
-                        <input type="text" value="请输入关键字搜索" class="searchText" onclick="search()" id="searchText">
+                        <input type="text" value="请输入关键字搜索" onblur="renew()" onclick="clearinput()" class="searchText"
+                            id="searchText">
+                        <script>
+                            function clearinput() {
+                                document.getElementById('searchText').value = '';
+                            }
+                            function renew() {
+                                document.getElementById('searchText').value = '请输入关键字搜索';
+                            }
+                        </script>
                     </form>
                 </div>
-                <!-- <script>
-                    var clearvalue = document.getElementsById('searchText');
-                    // clearvalue.addEventListener("click", function () {
-                    //     window.confirm("hfdfho");
-                    // });
-                </script> -->
             </div>
         </div>
     </header>
