@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .banner {
+            width: 400px;
+            height: 300px;
+            border: 2px solid #999;
+            overflow: hidden;
+        }
+
+        .imglist img {
+            width: 400px;
+            height: 300px;
+        }
+
+        .imglist {
+            width: 2000px;
+            height: 300px;
+        }
+
+        .imglist li {
+            float: left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <ul class="imglist" id="imglist">
+            <li><img src="./tp1.jpg"></li>
+            <li><img src="./tp2.jpg"></li>
+            <li><img src="./tp3.jpg"></li>
+            <li><img src="./tp4.jpg"></li>
+            <!-- 最后一张图空白，补上第一张图接上 -->
+            <li><img src="./tp1.jpg"></li>
+        </ul>
+    </div>
+    <script>
+        var left = 0;
+        var timer;
+        run();
+        function run() {
+            // 判断是否滚完一轮
+            if (left <= -1600) {
+                left = 0;
+            }
+            imglist.style.marginLeft = left + 'px';
+            // 添加变量n，滚完一张图停1200毫秒
+            var n = (left % 400 == 0) ? n = 1200 : n = 10;
+            // 设置移动的距离
+            left -= 400;
+            // 设置定时器
+            timer = setTimeout(run, n);
+        }
+    </script>
+</body>
+
+</html>

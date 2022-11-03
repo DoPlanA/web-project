@@ -187,33 +187,43 @@
                         </ul>
                         <a class="more" href="#">更多 <font>>></font></a>
                         <div class="notice_part">
-                            <div class="notice_divs">
-                                <ul>
-                                    <li>
-                                        <div class="notice_div">
-                                            <a href="#" target="_blank">护理学院第四次学生代表大会公示文件</a>
-                                            <p>时间：10-28</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="notice_div">
-                                            <a href="#" target="_blank">2021年护理学院校聘结果公示</a>
-                                            <p>时间：12-29</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="notice_div">
-                                            <a href="#" target="_blank">2021年护理学院职称评审结果公示</a>
-                                            <p>时间：11-18</p>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="notice_div">
-                                            <a href="#" target="_blank">护理学院学生分会组织改革情况公示</a>
-                                            <p>时间：11-18</p>
-                                        </div>
-                                    </li>
-                                </ul>
+                            <div class="notice_view" id="notice_view">
+                                <div class="notice_divs" id="notice_divs">
+                                    <ul>
+                                        <li>
+                                            <div class="notice_div">
+                                                <a href="#" target="_blank">护理学院第四次学生代表大会公示文件</a>
+                                                <p>时间：10-28</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="notice_div">
+                                                <a href="#" target="_blank">2021年护理学院校聘结果公示</a>
+                                                <p>时间：12-29</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="notice_div">
+                                                <a href="#" target="_blank">2021年护理学院职称评审结果公示</a>
+                                                <p>时间：11-18</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="notice_div">
+                                                <a href="#" target="_blank">护理学院学生分会组织改革情况公示</a>
+                                                <p>时间：11-18</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="notice_divs2" id="notice_divs2"></div>
+                                <script>
+                                    var view = document.getElementById('notice_view');
+                                    var divs1 = document.getElementById('notice_divs1');
+                                    var divs2 = document.getElementById('notice_divs2');
+                                    divs2.innerHTML = divs1.innerHTML;
+
+                                </script>
                             </div>
                         </div>
                     </div>
