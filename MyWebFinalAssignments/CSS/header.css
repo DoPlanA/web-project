@@ -429,12 +429,11 @@ img {
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 370px;
+    height: 282px;
 }
 
 .notice_divs {
     position: absolute;
-
 }
 
 .notice_divs li {
