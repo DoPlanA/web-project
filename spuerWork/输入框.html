@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+
+        p {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        li {
+            margin-top: 15px;
+
+        }
+
+        form {
+            padding: 20px 100px;
+        }
+
+        input {
+            outline: none;
+            width: 250px;
+            height: 30px;
+            border-radius: 2px;
+            border: 1px solid #6166ff;
+        }
+
+        .myinput:focus {
+            border-style: solid;
+            border-color: red;
+            box-shadow: 0 0 15px red;
+        }
+
+        textarea {
+            outline: none;
+            width: 250px;
+            height: 70px;
+            border-color: #6166ff;
+            border-radius: 3px;
+        }
+
+
+        .myradio {
+            height: auto;
+            width: auto;
+            text-decoration: none;
+            margin: 0 4px;
+        }
+
+        .myradio span {
+            display: inline-block;
+        }
+
+        .setcheck {
+            display: inline-block;
+        }
+
+        .mycheck {
+            height: auto;
+            width: auto;
+            margin-left: 10px;
+        }
+
+        .mysubmit {
+            color: #fff;
+            width: 70px;
+            height: 40px;
+            background-color: #1583db;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="myform">
+        <form>
+            <ul>
+                <li>
+                    <p>收货人</p>
+                    <input class="myinput" type="text">
+                </li>
+                <li>
+                    <p>手机号码</p>
+                    <input class="myinput" type="text">
+                </li>
+                <li>
+                    <p>所在地区</p>
+                    <input class="myinput" type="text">
+                </li>
+                <li>
+                    <p>详细地址</p>
+                    <textarea class="myinput" cols="30" rows="10"></textarea>
+                </li>
+                <li class="myradios">
+                    <p>标签</p>
+                    <input class="myradio" type="radio" name="mylabel"> <span>家</span>
+                    <input class="myradio" type="radio" name="mylabel"> <span>公司</span>
+                    <input class="myradio" type="radio" name="mylabel"> <span>学校</span>
+                </li>
+                <li>
+                    <p class="setcheck">设置为默认地址</p><input class="mycheck" type="checkbox">
+                </li>
+                <li><input class="mysubmit" type="submit"></li>
+            </ul>
+        </form>
+    </div>
+</body>
+
+</html>

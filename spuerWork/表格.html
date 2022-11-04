@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        table {
+            margin: 200px auto;
+            width: 500px;
+            height: 240px;
+            border-collapse: collapse;
+        }
+
+        th,
+        td {
+            border: 1px solid pink;
+            text-align: center;
+            height: 40px;
+        }
+
+        .th1 {
+            line-height: 80px;
+            border: none;
+        }
+
+        .tr1 {
+            font-weight: bold;
+            background-color: #cadefd;
+        }
+
+        .td1 {
+            text-align: left;
+            padding-left: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th class="th1" colspan="3">
+                    <h1>产品月销量</h1>
+                </th>
+            </tr>
+            <tr>
+                <th>ID</th>
+                <th>产品名称</th>
+                <th>销量</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2021090901</td>
+                <td>马克杯</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>2021090901</td>
+                <td>啤酒杯</td>
+                <td>5200</td>
+            </tr>
+            <tr>
+                <td>2021090901</td>
+                <td>搪瓷杯</td>
+                <td>3500</td>
+            </tr>
+            <tr class="tr1">
+                <td class="td1" colspan="2">合计</td>
+                <td>13700</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

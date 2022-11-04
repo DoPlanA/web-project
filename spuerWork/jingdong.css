@@ -1,0 +1,97 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.mybox {
+    margin: 200px auto;
+    width: 320px;
+    padding: 15px 15px;
+    box-shadow: 0 0 15px #999;
+}
+
+.myul li {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.li1 {
+    height: 50px;
+    position: relative;
+    display: block;
+}
+
+
+.li2 {
+    position: relative;
+    height: 150px;
+    background-color: #f6e9f0;
+    border-radius: 5px;
+}
+
+.li3 {
+    position: relative;
+    height: 150px;
+    background-color: #d0e1f1;
+    border-radius: 5px;
+
+}
+
+.li1 h1 {
+    position: absolute;
+    width: 100px;
+    margin-left: 10px;
+}
+
+.img3 {
+    position: absolute;
+    margin-left: 115px;
+    margin-top: 15px;
+    background-image: url("./jingdong3.png");
+    width: 16px;
+    height: 16px;
+    background-position: -16px 0;
+}
+
+.img3:hover {
+    background-position: 0 0;
+}
+
+.box11 {
+    position: absolute;
+    padding: 10px 10px;
+    width: 150px;
+    height: 100px;
+    float: left;
+}
+
+.box21 {
+    position: absolute;
+    padding: 10px 10px;
+    width: 150px;
+    height: 100px;
+    float: left;
+}
+
+.p1 {
+    margin-top: 5px;
+    text-align: center;
+    width: 40px;
+    color: red;
+    border: 1px solid red;
+    border-radius: 2px;
+    margin-bottom: 35px;
+}
+
+.p2 {
+    color: #999;
+}
+
+.myimg {
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    margin-left: 180px;
+    margin-top: 10px;
+}
