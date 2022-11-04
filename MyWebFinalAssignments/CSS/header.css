@@ -203,27 +203,28 @@ img {
     z-index: 1;
     position: relative;
     height: 417px;
-    width: 100%;
+    width: 1519px;
     overflow: hidden;
     margin-bottom: 1.5em;
 }
 
 
 .banner_box ul {
-    position: absolute;
     height: 417px;
-    width: 100%;
+    width: 4557px;
 }
 
-#myimgs li {
-    display: block;
-    width: 100%;
+.myimg img {
+    width: 1519px;
     height: 417px;
 }
 
+.myimgs li {
+    float: left;
+}
 
-
-.banner_box .leftbutton {
+.banner_box .prev {
+    cursor: pointer;
     top: -41px;
     display: block;
     left: 16.5%;
@@ -234,7 +235,8 @@ img {
     background-image: url("../image/util/arrow.png");
 }
 
-.banner_box .rightbutton {
+.banner_box .next {
+    cursor: pointer;
     top: -41px;
     display: block;
     right: 16.5%;
@@ -246,11 +248,11 @@ img {
     background-position: right 0;
 }
 
-.leftbutton:hover {
+.prev:hover {
     background-position: left bottom;
 }
 
-.rightbutton:hover {
+.next:hover {
     background-position: right bottom;
 }
 
@@ -433,10 +435,24 @@ img {
 }
 
 .notice_divs {
-    position: absolute;
+    width: 100%;
+    height: 376px;
 }
 
 .notice_divs li {
+    width: 100%;
+    padding-bottom: 18px;
+    margin-bottom: 18px;
+    border-bottom: 1px solid #ededed;
+    height: 57px;
+}
+
+.notice_divs2 {
+    width: 100%;
+    height: 376px;
+}
+
+.notice_divs2 li {
     width: 100%;
     padding-bottom: 18px;
     margin-bottom: 18px;
@@ -456,6 +472,18 @@ img {
 }
 
 .notice_divs p {
+    color: #949494;
+    margin-top: 12px;
+    padding-left: 18px;
+    background: url("../image/util/ico2.png") no-repeat left;
+}
+
+.notice_divs2 a {
+    color: #5b5b5b;
+    line-height: 24px;
+}
+
+.notice_divs2 p {
     color: #949494;
     margin-top: 12px;
     padding-left: 18px;

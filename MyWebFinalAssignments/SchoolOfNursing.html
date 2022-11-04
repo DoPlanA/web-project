@@ -120,7 +120,7 @@
     </nav>
     <banner>
         <div class="banner_box">
-            <ul id="myimgs">
+            <ul class="myimgs" id="myimgs">
                 <li id="bannerimg1">
                     <a href="#"><img src="./image/main/20220311105739.jpg"></a>
                 </li>
@@ -131,9 +131,60 @@
                     <a href="#"><img src="./image/main/xsbisai.jpg"></a>
                 </li>
             </ul>
-            <a class="leftbutton"></a>
-            <a class="rightbutton"></a>
+            <div class="prev"></div>
+            <div class="next"></div>
         </div>
+        <script>
+            var imglist = document.querySelector('.myimgs');
+
+            var prev = document.querySelector('.prev');
+            var next = document.querySelector('.next');
+            var left = 0;
+            var timer;
+            run();
+            function run() {
+                // 判断是否滚完一轮
+                if (left <= -4557) {
+                    left = 0;
+                }
+                imglist.style.marginLeft = left + 'px';
+                // 添加变量n，滚完一张图停1200毫秒
+                var n = (left % 1519 == 0) ? n = 2000 : n = 10;
+                // 设置移动的距离
+                left -= 1519;
+                // 设置定时器
+                timer = setTimeout(run, n);
+            }
+
+            //创建一个图片定位函数
+            function changego(n) {
+                let lt = -(1519 * n);
+                imglist.style.marginLeft = lt + 'px';
+                left = lt;
+            }
+
+            prev.onclick = function () {
+                let prevgo = (-left / 1519) - 1;
+                if (prevgo == -1) {
+                    prevgo = 2;
+                }
+                changego(prevgo);
+            }
+
+            next.onclick = function () {
+                let nextgo = (-left / 1519) + 1;
+                if (nextgo >= 3) {
+                    nextgo = 0;
+                }
+                changego(nextgo);
+            }
+            imglist.onmouseover = function () {
+                clearTimeout(timer);
+            }
+            imglist.onmouseout = function () {
+                run();
+            }
+        </script>
     </banner>
     <main>
         <div class="max_box">
@@ -192,25 +243,25 @@
                                     <ul>
                                         <li>
                                             <div class="notice_div">
-                                                <a href="#" target="_blank">护理学院第四次学生代表大会公示文件</a>
+                                                <a href="#">护理学院第四次学生代表大会公示文件</a>
                                                 <p>时间：10-28</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="notice_div">
-                                                <a href="#" target="_blank">2021年护理学院校聘结果公示</a>
+                                                <a href="#">2021年护理学院校聘结果公示</a>
                                                 <p>时间：12-29</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="notice_div">
-                                                <a href="#" target="_blank">2021年护理学院职称评审结果公示</a>
+                                                <a href="#">2021年护理学院职称评审结果公示</a>
                                                 <p>时间：11-18</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="notice_div">
-                                                <a href="#" target="_blank">护理学院学生分会组织改革情况公示</a>
+                                                <a href="#">护理学院学生分会组织改革情况公示</a>
                                                 <p>时间：11-18</p>
                                             </div>
                                         </li>
@@ -218,11 +269,18 @@
                                 </div>
                                 <div class="notice_divs2" id="notice_divs2"></div>
                                 <script>
-                                    var view = document.getElementById('notice_view');
-                                    var divs1 = document.getElementById('notice_divs1');
-                                    var divs2 = document.getElementById('notice_divs2');
-                                    divs2.innerHTML = divs1.innerHTML;
-
+                                    var parent = document.getElementById('notice_view');
+                                    var child1 = document.getElementById('notice_divs');
+                                    var child2 = document.getElementById('notice_divs2');
+                                    child2.innerHTML = child1.innerHTML;
+                                    function scrollgo() {
+                                        if (parent.scrollTop >= child1.scrollHeight) {
+                                            parent.scrollTop = 0;
+                                        } else {
+                                            parent.scrollTop++;
+                                        }
+                                    }
+                                    setInterval(scrollgo, 20);
                                 </script>
                             </div>
                         </div>
