@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .banner {
+            width: 1840px;
+            height: 417px;
+            overflow: hidden;
+        }
+
+        .imglist {
+            width: 7360px;
+            height: 417px;
+        }
+
+        .imglist img {
+            width: 1840px;
+            height: 417px;
+        }
+
+        .imglist li {
+            float: left;
+        }
+
+
+
+        .prev {
+            top: -41px;
+            display: block;
+            left: 16.5%;
+            top: 35%;
+            position: absolute;
+            width: 44px;
+            height: 82px;
+            background-image: url("../image/util/arrow.png");
+            cursor: pointer;
+        }
+
+        .next {
+            top: -41px;
+            display: block;
+            right: 16.5%;
+            top: 35%;
+            position: absolute;
+            width: 44px;
+            height: 82px;
+            background-image: url("../image/util/arrow.png");
+            background-position: right 0;
+            cursor: pointer;
+
+        }
+
+        .prev:hover {
+            background-position: left bottom;
+
+        }
+
+        .next:hover {
+            background-position: right bottom;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="banner">
+        <ul class="imglist" id="imglist">
+            <li>
+                <a href="#"><img src="../image/main/20220311105739.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="../image/main/2022031114180803.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="../image/main/xsbisai.jpg"></a>
+            </li>
+            <li>
+                <a href="#"><img src="../image/main/20220311105739.jpg"></a>
+            </li>
+        </ul>
+        <div class="prev"></div>
+        <div class="next"></div>
+    </div>
+    <script>
+        var imglist = document.querySelector('.imglist');
+        var prev = document.querySelector('.prev');
+        var next = document.querySelector('.next');
+        var left = 0;
+        var timer;
+        run();
+        function run() {
+            // 判断是否滚完一轮
+            if (left <= -5520) {
+                left = 0;
+            }
+            imglist.style.marginLeft = left + 'px';
+            // 添加变量n，滚完一张图停1200毫秒
+            var n = (left % 1840 == 0) ? n = 1200 : n = 10;
+            // 设置移动的距离
+            left -= 1840;
+            // 设置定时器
+            timer = setTimeout(run, n);
+        }
+
+        //创建一个图片定位函数
+        function changego(n) {
+            let lt = -(1840 * n);
+            imglist.style.marginLeft = lt + 'px';
+            left = lt;
+        }
+
+        prev.onclick = function () {
+            let prevgo = (-left / 1840) - 1;
+            if (prevgo == -1) {
+                prevgo = 2;
+            }
+            changego(prevgo);
+        }
+
+        next.onclick = function () {
+            let nextgo = (-left / 1840) + 1;
+            if (nextgo == 3) {
+                nextgo = 0;
+            }
+            changego(nextgo);
+        }
+        imglist.onmouseover = function () {
+            clearTimeout(timer);
+        }
+        imglist.onmouseout = function () {
+            run();
+        }
+    </script>
+</body>
+
+</html>

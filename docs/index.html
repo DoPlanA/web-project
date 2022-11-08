@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>护理学院</title>
+
+    <link rel="stylesheet" href="./CSS/header.css">
+</head>
+
+<body>
+    <header>
+        <div class="stick"></div>
+        <div class="header">
+            <div class="header_left">
+                <a href="#">
+                    <img src="./image/header/lkk.png" alt="" title="护理学院">
+                </a>
+            </div>
+            <div class="header_center">
+                <a href="#">
+                    <img src="./image/header/yuanxun.png" alt="">
+                </a>
+            </div>
+            <div class="header_right">
+                <div class="link">
+                    <a href="#">原网站</a>
+                    <font>|</font>
+                    <a href="#">英文站</a>
+                </div>
+                <div class="search">
+                    <form action="">
+                        <span>
+                            <input type="image" src="./image/header/search.png" align="absmiddle" style="cursor: hand">
+                        </span>
+                        <input type="text" value="请输入关键字搜索" onblur="renew()" onclick="clearinput()" class="searchText"
+                            id="searchText">
+                        <script>
+                            function clearinput() {
+                                document.getElementById('searchText').value = '';
+                            }
+                            function renew() {
+                                document.getElementById('searchText').value = '请输入关键字搜索';
+                            }
+                        </script>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </header>
+    <nav>
+        <div class="mynav">
+            <div class="innav">
+                <ul class="innav_ul">
+                    <li>
+                        <a href="">首页</a>
+
+                    </li>
+                    <li>
+                        <a href="">学院概况</a>
+                        <ul id="nav1">
+                            <li><a href="#">学院简介</a></li>
+                            <li><a href="#">现任领导</a></li>
+                            <li><a href="#">机构设置</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">党建工作</a>
+                    </li>
+                    <li>
+                        <a href="">学科建设</a>
+                        <ul id="nav2">
+                            <li><a href="#">专业设置</a></li>
+                            <li><a href="#">对外交流</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">教学科研</a>
+                        <ul id="nav3">
+                            <li><a href="#">教研动态</a></li>
+                            <li><a href="#">精品课程</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">省级实验教学示范中心</a>
+                        <ul id="nav4">
+                            <li> <a href="#">护理学院实验中心简介</a></li>
+                            <li> <a href="#">交流互动</a> </li>
+                            <li> <a href="#">教师队伍</a> </li>
+                            <li> <a href="#">仪器设备</a> </li>
+                            <li> <a href="#">规章制度</a> </li>
+                            <li> <a href="#">网络资源</a> </li>
+                            <li> <a href="#">实验室开放</a> </li>
+                            <li> <a href="#">教学研究</a> </li>
+                            <li> <a href="#">实践教学</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">学生工作</a>
+                        <ul id="nav5">
+                            <li><a href="#">管理制度</a></li>
+                            <li><a href="#">学工动态</a></li>
+                            <li><a href="#">团学风采</a></li>
+                            <li><a href="#">就业信息</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">下载中心</a>
+                        <ul id="nav6">
+                            <li><a href="#">政策文件</a></li>
+                            <li><a href="#">教师下载中心</a></li>
+                            <li><a href="#">学生常用表格下载</a></li>
+                        </ul>
+                        </il>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <banner>
+        <div class="banner_box">
+            <ul class="myimgs" id="myimgs">
+                <li id="bannerimg1">
+                    <a href="#"><img src="./image/main/20220311105739.jpg"></a>
+                </li>
+                <li id="bannerimg2">
+                    <a href="#"><img src="./image/main/2022031114180803.jpg"></a>
+                </li>
+                <li id="bannerimg3">
+                    <a href="#"><img src="./image/main/xsbisai.jpg"></a>
+                </li>
+            </ul>
+            <div class="prev"></div>
+            <div class="next"></div>
+        </div>
+        <script>
+            var imglist = document.querySelector('.myimgs');
+
+            var prev = document.querySelector('.prev');
+            var next = document.querySelector('.next');
+            var left = 0;
+            var timer;
+            run();
+            function run() {
+                // 判断是否滚完一轮
+                if (left <= -4557) {
+                    left = 0;
+                }
+                imglist.style.marginLeft = left + 'px';
+                // 添加变量n，滚完一张图停1200毫秒
+                var n = (left % 1519 == 0) ? n = 2000 : n = 10;
+                // 设置移动的距离
+                left -= 1519;
+                // 设置定时器
+                timer = setTimeout(run, n);
+            }
+
+            //创建一个图片定位函数
+            function changego(n) {
+                let lt = -(1519 * n);
+                imglist.style.marginLeft = lt + 'px';
+                left = lt;
+            }
+
+            prev.onclick = function () {
+                let prevgo = (-left / 1519) - 1;
+                if (prevgo == -1) {
+                    prevgo = 2;
+                }
+                changego(prevgo);
+            }
+
+            next.onclick = function () {
+                let nextgo = (-left / 1519) + 1;
+                if (nextgo >= 3) {
+                    nextgo = 0;
+                }
+                changego(nextgo);
+            }
+            imglist.onmouseover = function () {
+                clearTimeout(timer);
+            }
+            imglist.onmouseout = function () {
+                run();
+            }
+        </script>
+    </banner>
+    <main>
+        <div class="max_box">
+            <div class="first_box">
+                <div class="article_one">
+                    <div class="schoolnew">
+                        <ul class="new_title">
+                            <li>
+                                学院新闻
+                            </li>
+                        </ul>
+                        <div class="new_left">
+                            <a class="more" href="#">更多 <font>>></font></a>
+                            <ul>
+                                <li>
+                                    <a href="#">
+                                        <img src="./image/aside/article.jpg" width="237px" height="145px">
+                                        <p>九江学院护理教育创办120周年...
+                                        </p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="./image/aside/article2.jpg" width="237px" height="145px">
+                                        <p>5.12国际护士节丨践行天使仁...</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="new_right">
+                            <ul>
+                                <li><a href="#"><span>11-29</span>九江学院护理教育创办120周年暨护理之光论坛隆重举行</a></li>
+                                <li><a href="#"><span>10-20</span>护理学院组织观看 “心理云课堂”心理健康公益直播课（二）</a></li>
+                                <li><a href="#"><span>10-17</span>护理学院组织师生集体学习观看党的二十大开幕仪式</a></li>
+                                <li><a href="#"><span>10-13</span>护理学院开展学习《习近平谈治国理政》第四卷专题讲座</a></li>
+                                <li><a href="#"><span>09-30</span>护理学院开展节前安全大检查</a></li>
+                                <li><a href="#"><span>09-30</span>护理学院学生党支部召开党员大会</a></li>
+                                <li><a href="#"><span>09-28</span>护理学院蔡端颖院长带队赴国家一流专业建设点高校考察</a></li>
+                                <li><a href="#"><span>09-21</span>护理学院召开《习近平谈治国理政》第四卷专题学习会</a></li>
+                                <li><a href="#"><span>09-21</span>护理学院教工党支部开展专题党课</a></li>
+                                <li><a href="#"><span>09-19</span>蔡端颖带队到九江市第五人民医院考察交流</a></li>
+                                <li><a href="#"><span>09-19</span>师生齐心为新生，共绘迎新“同心圆”——护理学院迎新工作顺利开展</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="article_two">
+                    <div class="notice">
+                        <ul class="notice_title">
+                            <li>通知公告</li>
+                        </ul>
+                        <a class="more" href="#">更多 <font>>></font></a>
+                        <div class="notice_part">
+                            <div class="notice_view" id="notice_view">
+                                <div class="notice_divs" id="notice_divs">
+                                    <ul>
+                                        <li>
+                                            <div class="notice_div">
+                                                <a href="#">护理学院第四次学生代表大会公示文件</a>
+                                                <p>时间：10-28</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="notice_div">
+                                                <a href="#">2021年护理学院校聘结果公示</a>
+                                                <p>时间：12-29</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="notice_div">
+                                                <a href="#">2021年护理学院职称评审结果公示</a>
+                                                <p>时间：11-18</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="notice_div">
+                                                <a href="#">护理学院学生分会组织改革情况公示</a>
+                                                <p>时间：11-18</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="notice_divs2" id="notice_divs2"></div>
+                                <script>
+                                    var parent = document.getElementById('notice_view');
+                                    var child1 = document.getElementById('notice_divs');
+                                    var child2 = document.getElementById('notice_divs2');
+                                    child2.innerHTML = child1.innerHTML;
+                                    function scrollgo() {
+                                        if (parent.scrollTop >= child1.scrollHeight) {
+                                            parent.scrollTop = 0;
+                                        } else {
+                                            parent.scrollTop++;
+                                        }
+                                    }
+                                    setInterval(scrollgo, 20);
+                                </script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="split">
+                <div class="split_div">
+                    <img src="./image/util/dsas.png">
+                </div>
+            </div>
+            <div class="second_box">
+                <div class="article_three">
+                    <ul class="stuAct_title">
+                        <li>学生动态</li>
+                    </ul>
+                    <a class="more" href="#">更多 <font>>></font></a>
+                    <div class="stuAct_left">
+                        <ul>
+                            <li><span>10-26</span><a href="#">青春心向党，百年再起航——护理学院“微团课”大赛圆满结束</a></li>
+                            <li><span>10-24</span><a href="#">护理学院开展“团结友爱、和睦相处，共创和谐校园”主题班会活动</a></li>
+                            <li><span>10-20</span><a href="#">护理学院组织观看 “心理云课堂”心理健康公益直播课（二）</a></li>
+                            <li><span>10-17</span><a href="#">护理学院开展“关注关心心理健康,健康快乐成人成才”主题班会活动</a></li>
+                            <li><span>10-17</span><a href="#">护理学院组织学生干部观看二十大开幕式</a></li>
+                            <li><span>10-11</span><a href="#">护理学院开展微运会暨运动员选拔活动</a></li>
+                            <li><span>09-30</span><a href="#">护理学院学生党支部召开党员大会</a></li>
+                            <li><span>09-30</span><a href="#">护理学院顺利开展2022级迎新晚会</a></li>
+                        </ul>
+                    </div>
+                    <div class="stuAct_right">
+                        <ul>
+                            <li><span>09-29</span><a href="#">国防教育促育人 同心共筑强国梦-- 护理学院顺利开展“线上+线下”国防教育活动
+                                </a></li>
+                            <li><span>09-29</span><a href="#">护理学院召开学生干部大会 专题学习《习近平谈治国理政》第四卷</a></li>
+                            <li><span>09-29</span><a href="#">护理学院组织观看 “心理云课堂”心理健康公益直播课（一）</a></li>
+                            <li><span>09-19</span><a href="#">护理学院开展国防安全教育主题班会</a></li>
+                            <li><span>09-19</span><a href="#">护理学院顺利开展2022级新生入学教育</a></li>
+                            <li><span>09-19</span><a href="#">师生齐心为新生，共绘迎新“同心圆”——护理学院迎新工作顺利开展</a></li>
+                            <li><span>09-09</span><a href="#">维护网络安全，奏响时代乐章—护理学院举办网络安全主题班会</a></li>
+                            <li><span>09-02</span><a href="#">护理学院召开新学期班级工作会</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="second_box_aside">
+                    <a href="#"><img src="./image/aside/qw1.png"></a>
+                    <a href="#"><img src="./image/aside/qw2.png"></a>
+                    <a href="#"><img src="./image/aside/qw3.png"></a>
+                    <a href="#"><img src="./image/aside/qw4.png"></a>
+                </div>
+            </div>
+            <div class="third_box">
+                <div class="aside">
+                    <ul class="aside_title">
+                        <li>友情链接</li>
+                    </ul>
+                    <div class="aside_img">
+                        <a href="#"><img src="./image/footer/lk1.png"></a>
+                        <a href="#"><img src="./image/footer/lk2.png"></a>
+                        <a href="#"><img src="./image/footer/lk3.png"></a>
+                        <a href="#"><img src="./image/footer/rr.png"></a>
+                        <a href="#" class="aside_img4"><img src="./image/footer/ee.png"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="myfooter">
+            <p>Copyright© 2019 All Rights Reserved.护理学院</p>
+            <p>学院地址：江西省九江市浔阳东路320号 &nbsp; &nbsp;&nbsp; &nbsp; Email：hlxy@jju.edu.cn</p>
+        </div>
+    </footer>
+</body>
+
+</html>

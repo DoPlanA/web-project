@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .notice_view {
+            overflow-y: scroll;
+            margin: 200px auto;
+            width: 200px;
+            overflow: hidden;
+            height: 282px;
+        }
+
+        .notice_divs {
+            width: 200px;
+            height: 376px;
+        }
+
+        .notice_divs li {
+            width: 200px;
+            padding-bottom: 18px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid #ededed;
+            height: 57px;
+        }
+
+        .notice_divs2 {
+            width: 200px;
+            height: 376px;
+        }
+
+        .notice_divs2 li {
+            width: 200px;
+            padding-bottom: 18px;
+            margin-bottom: 18px;
+            border-bottom: 1px solid #ededed;
+            height: 57px;
+        }
+
+        .notice_div {
+            width: 260px;
+            padding-left: 14px;
+            font-size: 14px;
+        }
+
+        .notice_divs2 a {
+            text-decoration: none;
+            color: #5b5b5b;
+            line-height: 24px;
+        }
+
+        .notice_divs2 a:hover {
+            color: #00a440;
+            text-decoration: underline;
+        }
+
+        .notice_divs2 p {
+            color: #949494;
+            margin-top: 12px;
+            padding-left: 18px;
+            background: url("../image/util/ico2.png") no-repeat left;
+        }
+
+        .notice_divs a {
+            text-decoration: none;
+            color: #5b5b5b;
+            line-height: 24px;
+        }
+
+        .notice_divs a:hover {
+            color: #00a440;
+            text-decoration: underline;
+        }
+
+        .notice_divs p {
+            color: #949494;
+            margin-top: 12px;
+            padding-left: 18px;
+            background: url("../image/util/ico2.png") no-repeat left;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="notice_view" id="notice_view">
+        <ul class="notice_divs" id="notice_divs">
+            <li>
+                <div class="notice_div">
+                    <a href="#" target="_blank">护理学院第四次学生代表大会公示文件</a>
+                    <p>时间：10-28</p>
+                </div>
+            </li>
+            <li>
+                <div class="notice_div">
+                    <a href="#" target="_blank">2021年护理学院校聘结果公示</a>
+                    <p>时间：12-29</p>
+                </div>
+            </li>
+            <li>
+                <div class="notice_div">
+                    <a href="#" target="_blank">2021年护理学院职称评审结果公示</a>
+                    <p>时间：11-18</p>
+                </div>
+            </li>
+            <li>
+                <div class="notice_div">
+                    <a href="#" target="_blank">护理学院学生分会组织改革情况公示</a>
+                    <p>时间：11-18</p>
+                </div>
+            </li>
+        </ul>
+        <ul class="notice_divs2" id="notice_divs2"></ul>
+    </div>
+
+    <script>
+        var parent = document.getElementById('notice_view');
+        var child1 = document.getElementById('notice_divs');
+        var child2 = document.getElementById('notice_divs2');
+        child2.innerHTML = child1.innerHTML;
+        setInterval(function () {
+            if (parent.scrollTop >= child1.scrollHeight) {
+                parent.scrollTop = 0;
+            } else {
+                parent.scrollTop++;
+            }
+        }, 20);
+    </script>
+</body>
+
+</html>
